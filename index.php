@@ -33,7 +33,7 @@ $lunghezza = $_GET['NumeroCaratteri'];
   <span>
     <?php 
     for ($x = 0; $x <= $lunghezza; $x++) {
-      echo $alphas[rand(0,51)].rand(0,10);
+      echo str_shuffle($alphas[rand(0,51)].rand(0,10)) ;
     }
    ?>
   </span>

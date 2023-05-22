@@ -1,15 +1,5 @@
 <?php 
-$alphas = array_merge(range('A', 'Z'), range('a', 'z'));
-$numbers = rand(0,10);
-$lunghezza = $_GET['NumeroCaratteri'];
-//  function password() {
-//    for ($x = 0; $x <= $lunghezza; $x++) {
-//      echo $random;
-//    }
-//  };
-//  var_dump(password())
-// var_dump($alphas)
-// var_dump($random)
+include __DIR__ . '/partials/functions.php'
 ?>
 
 <!DOCTYPE html>
@@ -25,14 +15,14 @@ $lunghezza = $_GET['NumeroCaratteri'];
   <form method="GET">
     
     <label for="">Numero di carateri per la tua password</label>
-    <input type="number" min="1" max="30" placeholder="inserisci la quantità di caratteri" name="NumeroCaratteri">
+    <input type="number" min="2" max="30" placeholder="inserisci la quantità di caratteri" name="NumeroCaratteri">
 
     <button type="submit">invio</button>
 
   </form>
   <span>
     <?php 
-    for ($x = 0; $x <= $lunghezza; $x++) {
+    for ($x = 0; $x <= $lunghezza / 2; $x++) {
       echo str_shuffle($alphas[rand(0,51)].rand(0,10)) ;
     }
    ?>
